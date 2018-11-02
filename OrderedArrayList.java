@@ -10,6 +10,8 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
   }
 
   public boolean add( T element) {
+    if ( element == null)
+    throw new IllegalArgumentException("element cannot be null");
     super.add( newIndex(element), element);
     return true;
   }
